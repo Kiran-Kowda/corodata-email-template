@@ -122,6 +122,34 @@
         }
 
     }
+
+    .social-table, .social-table tbody{
+        border-spacing: none;
+        border-collapse: collapse;
+    }
+    .social-table-row{
+        background-color: #ccc;
+        display: block;
+        width: 227px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        
+    }
+    .social-table-row td{
+        /*display: table-cell;*/
+        /*border: solid thin green;*/
+        /*width:30px;*/
+        /*height:30px;*/
+        background-color: red;
+        border-spacing: none !important;
+        /*float: left;*/
+        /*text-align: center;*/
+        padding: 20px 15px 15px;
+        border-collapse: collapse;
+    }
+    .social-table-row a{
+        border-collapse: collapse;
+    }
 </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -333,16 +361,12 @@
 </table>
 
 <!-- FOOTER -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family: Helvetica, Arial, sans-serif;">
-    <tr>
-        <td>
-            <ul style="width:278px; margin-left:auto; margin-right:auto; padding: 10px 0;">
-                <li style="list-style:none; display:inline-block; margin-left:20px; margin-right: 20px;"><img src="twitter.png" target="blank" style="cursor:pointer;" height="27" width="26" alt="twitter icon"></li>
-                <li style="list-style:none; display:inline-block; margin-left:20px; margin-right: 20px;"><img src="facebook.png" target="blank" style="cursor:pointer;" height="27" width="26" alt="facebook icon"></li>
-                <li style="list-style:none; display:inline-block; margin-left:20px; margin-right: 20px;"><img src="linkedin.png" target="blank" style="cursor:pointer;" height="27" width="26" alt="linkedin icon"></li>
-                <li style="list-style:none; display:inline-block; margin-left:20px; margin-right: 20px;"><img src="googleplus.png" target="blank" style="cursor:pointer;" height="27" width="26" alt="googleplus icon"></li>
-            </ul>
-        </td>
+<table class="social-table" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family: Helvetica, Arial, sans-serif;">
+    <tr class="social-table-row">
+        <td><a href="#"><img src="twitter.png" height="27" width="26" alt=""></a></td>
+        <td><a href="#"><img src="facebook.png" height="27" width="26" alt=""></a></td>
+        <td><a href="#"><img src="linkedin.png" height="27" width="26" alt=""></a></td>
+        <td><a href="#"><img src="googleplus.png" height="27" width="26" alt=""></a></td>
     </tr><!-- end social icons -->
     <tr style="border-top: solid thin #eee; border-bottom: solid thin #eee; font-weight: bold;">
         <td style=" display:block; text-align:center; padding-top:20px; padding-bottom:20px;"><a href="#" style="text-decoration:none; color: #296CB1;">Did You Know? We can help you with active files, too  →</a></td>

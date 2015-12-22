@@ -1,0 +1,508 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% if content.html_title and content.html_title != '' %}{{ content.html_title }}{% else %}{{ content.body.subject }}{% endif %}</title>
+    {% if content.meta_description %}<meta name="description" content="{{ content.meta_description }}"/>{% endif %}
+
+    <style type="text/css" id="hs-inline-css">
+      /*<![CDATA[*/
+      /* everything in this style tag will be inlined onto matching elements */
+
+      /* CLIENT-SPECIFIC STYLES */
+      #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+      .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+      body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+      table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+      img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+      /* RESET STYLES */
+      body{height:100% !important; width:100% !important; margin:0; padding:0; }
+      img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+      table{border-collapse:collapse !important;}
+
+      /* iOS BLUE LINKS */
+      .appleBody a {color:#68440a; text-decoration: none;}
+      .appleFooter a {color:#999999; text-decoration: none;}
+      
+      /* DM Styles */
+      .font-family{
+        font-family: Helvetica, Arial, sans-serif; 
+      }
+      .header{
+        background-color: #ECE8E7;
+      }
+      .logo-img-wrapper{
+        padding:20px;
+      }
+      .logo {
+        width:334px; 
+        height:30px;
+        display: block; 
+        margin-left:auto;
+        margin-right:auto;
+        color: #666666; 
+        font-size: 16px;
+      }
+      .hidden-preheader-text{
+        display: none; 
+        font-size: 1px; 
+        color: #fefefe; 
+        line-height: 1px; 
+        max-height: 0px; 
+        max-width: 0px; 
+        opacity: 0; 
+        overflow: hidden;
+      }
+
+      .lower-cta{
+        background-color: #f9cc71;
+        font-family: Helvetica, Arial, sans-serif;
+        color: #333333;
+      }
+      .lower-cta-header{
+        font-size: 25px;
+        font-weight: bold;
+        padding-top: 30px;
+      }
+      .lower-cta-blurb{
+        padding: 20px 0 0 0; 
+        font-size: 16px; 
+        line-height: 25px;
+      }
+      .mobile-button-container{
+        padding-top:25px;
+        display: table-cell;
+      }
+      .lower-cta .mobile-button{
+        font-size: 18px; 
+        font-family: Helvetica, Arial, sans-serif; 
+        font-weight: bold; 
+        color: #ffffff; 
+        text-decoration: none; 
+        background-color: #296CB1;
+        border-top: solid 15px #296CB1;
+        /*border-right: solid 35px #296CB1;*/
+        border-bottom: solid 15px #296CB1;
+        /*border-left: solid 35px #296CB1;*/
+        border-radius: 3px; 
+        -webkit-border-radius: 3px; 
+        -moz-border-radius: 3px; 
+        display: inline-block;
+        width:175px;
+        text-align: center;
+      }
+      .social-table, .social-table tbody{
+        border-spacing: none;
+        border-collapse: collapse;
+      }
+      .social-table{
+        width: 227px;
+      }
+      .social-table-row{
+        display: table;
+        margin: 0 auto;
+        border-collapse: collapse;
+          
+      }
+      .social-table-row td{
+        border-spacing: none !important;
+        padding: 20px 15px 15px;
+        border-collapse: collapse;
+      }
+      .social-table-row a{
+          border-collapse: collapse;
+      }
+      .footer-promo-wrapper{
+        border-top: solid thin #eee; 
+        border-bottom: solid thin #eee; 
+        font-weight: bold;
+      }
+      .footer-promo-inner{
+        display:block; 
+        text-align:center; 
+        padding-top:20px; 
+        padding-bottom:20px;
+      }
+      .footer-promo-inner a{
+        text-decoration:none; 
+        color: #296CB1;
+      }
+
+      .footer-list{
+        text-align:center; 
+        padding:0;
+        padding-top:20px;
+        padding-bottom:20px;
+        font-weight: bold;
+      }
+      .footer-list-item{
+        display: inline-block;
+      }
+      .footer-link{
+        text-decoration:none; 
+        line-height:24px; 
+        color: #296CB1;
+      }
+      /* End DM Styles */
+
+      .footer-block-separator{
+        width:10px; 
+        height: 10px;
+        background-color:#BA0C2F; 
+        margin-left:5px; 
+        margin-right:5px;
+      }
+
+      /* MOBILE STYLES */
+      @media screen and (max-width: 640px) {
+
+        /* ALLOWS FOR FLUID TABLES */
+        table[class="wrapper"]{
+          width:100% !important;
+        }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+        td[class="logo"]{
+          text-align: left;
+          padding: 20px 0 20px 0 !important;
+        }
+
+        td[class="logo"] img{
+          margin:0 auto!important;
+        }
+
+        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+        td[class="mobile-hide"]{
+          display:none;
+        }
+
+        img[class="mobile-hide"]{
+          display: none !important;
+        }
+
+        img[class="img-max"]{
+          max-width: 100% !important;
+          height:auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        table[class="responsive-table"]{
+          width:100%!important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        td[class="padding"]{
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        td[class="padding-copy"]{
+          padding: 10px 5% 10px 5% !important;
+          text-align: center;
+        }
+
+        td[class="padding-meta"]{
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        td[class="no-pad"]{
+          padding: 0 0 20px 0 !important;
+        }
+
+        td[class="no-padding"]{
+          padding: 0 !important;
+        }
+
+        td[class="section-padding"]{
+          padding: 10px 15px 10px 15px !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        td[class="mobile-wrapper"]{
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        table[class="mobile-button-container"]{
+          margin:0 auto;
+          width:100% !important;
+        }
+
+        a[class="mobile-button"]{
+          border: 0 !important;
+          color: #296CB1;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+      /* iPhone 5 CSS */
+      /*@media only screen and (min-device-width: 320px) and (max-device-width: 320px){
+        table{
+          width:100% !important;
+        }
+      }      */      
+      /*]]>*/
+    </style>
+  </head>
+  <body>
+    <!-- Preview text (text which appears right after subject in certain email clients) -->
+    <div id="preview_text" style="display:none!important;">{% text "preview_text" label="Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>", value="", no_wrapper=True %}</div>
+
+    <!-- Insert body here -->
+
+    <!-- HEADER -->
+    <table class="header" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td>
+          <!-- HIDDEN PREHEADER TEXT -->
+          <div class="hidden-preheader-text">
+              Thank you for becoming a Corodata Client, [first name]. To ensure delivery of News to your inbox, add news@corodata.com to your address book.
+          </div>
+          <div align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="500" class="wrapper">
+              <!-- LOGO/PREHEADER TEXT -->
+              <tr>
+                <td class="logo-img-wrapper">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td align="center"><a href="#" target="_blank"><img class="logo" alt="Corodata [Just for Clients]" src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/logo.gif" border="0"></a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ONE COLUMN SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td bgcolor="#1e2e5f" align="center" style="padding: 40px 15px 70px 15px;" class="section-padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+            <tr>
+              <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <!-- HERO IMAGE -->
+                    <td class="padding-copy">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>
+                            <a href="#" target="_blank"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/product-1.png" width="500" height="300" border="0" alt="Insert alt text here" style="display: block; padding: 0; color: #266e9c; text-decoration: none;" class="img-max"></a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <!-- COPY -->
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="center" style="font-size: 36px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding-top: 30px;" class="padding-copy">Store, Manage, &amp; Protect</td>
+                        </tr>
+                        <tr>
+                          <td align="center" style="font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding-top: 30px;" class="padding-copy">Welcome to Corodata, Choi Chow! Here are a bunch of perks that will get you up to speed quickly. Bookmark this page for easy reference—your future self with thank you.</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- COMPACT ARTICLE SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0 15px 50px 15px;" class="section-padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">
+            <tr>
+              <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a href="#" target="_blank"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/product-2.png" alt="alt text here" width="150" height="200" border="0" style="display: block; font-family: Arial; color: #266e9c; font-size: 14px;"></a></td>
+              <td style="padding: 40px 0 0 0;" class="no-padding">
+                <!-- ARTICLE -->
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td align="left" style="padding: 0 0 5px 25px; font-size: 22px; line-height: 30px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; color: #296CB1;" class="padding-copy">Pay your bills and place orders easily online</td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
+                      Enjoy the convenience of managing your records storage needs online, anytime and anywhere. It’s fast, simple, and free. 
+                      Here are some quick links: 
+                      <ul>
+                        <li align="left"><a style="text-decoration: none; color:#296cb1; font-weight:bold;" href="https://rsnet.corodata.com/coropay">Pay your bills</a></li>
+                        <li align="left"><a style="text-decoration: none; color:#296cb1; font-weight:bold;" href="https://rsnet.corodata.com/coropay">Order supplies</a>, like boxes & seals</li>
+                        <li align="left"><a style="text-decoration: none; color:#296cb1; font-weight:bold;" href="https://rsnet.corodata.com/coropay">Request a record or file</a></li>
+                        <li align="left"><a style="text-decoration: none; color:#296cb1; font-weight:bold;" href="https://rsnet.corodata.com/coropay">Request a pick up for shredding</a></li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- COMPACT ARTICLE SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td bgcolor="#ECE8E7" align="center" style="padding: 0 15px 50px 15px;" class="section-padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">
+            <tr>
+              <td style="padding: 40px 0 0 0;" class="no-padding">
+                <!-- ARTICLE -->
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td align="left" style="padding: 0 25px 5px 0; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; color: #296CB1;" class="padding-copy">Corodata [Monthly] News</td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding: 10px 25px 15px 0; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
+                      Look for Corodata [Monthly] News the last week of each month. Each issue is a quick-read with valuable information you can use immediately, like a <a style="text-decoration: none; color:#296cb1; font-weight:bold;" href="http://corodata.com/five-steps-protect-business-data-leaks/">7 Data Breach Risks in Your Office poster →</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide">
+                <a href="#" target="_blank"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/product-3.png" alt="alt text here" width="150" height="200" border="0" style="display: block; font-family: Arial; color: #666666; font-size: 14px;"></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- COMPACT ARTICLE SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0 15px 50px 15px;" class="section-padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">
+            <tr>
+              <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a href="#" target="_blank"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/product-4.png" alt="alt text here" width="150" height="200" border="0" style="display: block; font-family: Arial; color: #666666; font-size: 14px;"></a></td>
+              <td style="padding: 40px 0 0 0;" class="no-padding">
+                <!-- ARTICLE -->
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td align="left" style="padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; color: #296CB1;" class="padding-copy">Personal, Local Service</td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">Corodata ensures that doing business with us is easy and offers the friendly face and voice you can count on. Know that you can rely on outstanding customer service from local drivers and support staff.
+                    <br /><br />
+                    <a style="text-decoration: none; color:#296cb1; font-weight:bold;" href="http://corodata.com/locations/coropay">Call your local office →</a>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ONE COLUMN SECTION -->
+    <table class="lower-cta" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" style="padding: 10px 15px 40px 15px;" class="section-padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+            <tr>
+              <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <!-- COPY -->
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="center" class="padding-copy lower-cta-header font-family">Take "new customer" survey</td>
+                        </tr>
+                        <tr>
+                          <td align="center" class="padding-copy lower-cta-blurb font-family">We invite you to take this survey so that we can learn more about your needs and what additional perks we can provide.</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <!-- BULLETPROOF BUTTON -->
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                        <tr>
+                          <td align="center" class="padding-copy">
+                            <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                              <tr>
+                                <td align="center"><a href="#" target="_blank" class="mobile-button font-family">Take Survey</a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- FOOTER -->
+    <table border="0" cellpadding="0" width="100%" style="font-family: Helvetica, Arial, sans-serif;">
+      <tr>
+        <td>
+          <table class="social-table" border="0" align="center" cellpadding="0" cellspacing="0" style="font-family: Helvetica, Arial, sans-serif;">
+            <tr class="social-table-row">
+              <td><a href="#"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/twitter.png" height="27" width="26" alt=""></a></td>
+              <td><a href="#"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/facebook.png" height="27" width="26" alt=""></a></td>
+              <td><a href="#"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/linkedin.png" height="27" width="26" alt=""></a></td>
+              <td><a href="#"><img src="http://cdn2.hubspot.net/hubfs/454308/Corodata/Welcome-Email-Assets/googleplus.png" height="27" width="26" alt=""></a></td>
+            </tr>
+          </table>
+        </td>
+        
+      </tr><!-- end social icons -->
+      <tr class="footer-promo-wrapper">
+        <td class="footer-promo-inner font-family"><a href="#">Did You Know? We can help you with active files, too →</a></td>
+      </tr>
+      <tr>
+        <td>
+          <table width="650" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+            <tr>
+              <td>
+                <div class="footer-list font-family">
+                  <span class="footer-list-item"><a href="#" class="footer-link">Locations</a></span>
+                  <span class="footer-list-item footer-block-separator"></span>
+                  <span class="footer-list-item"><a href="#" class="footer-link">Refer a Friend</a></span>
+                  <span class="footer-list-item footer-block-separator"></span>
+                  <span class="footer-list-item"><a href="#" class="footer-link">Feedback Survey</a></span>
+                  <span class="footer-list-item footer-block-separator"></span>
+                  <span class="footer-list-item"><a href="#" class="footer-link">Bill Pay</a></span>
+                  <span class="footer-list-item footer-block-separator"></span>
+                  <span class="footer-list-item"><a href="#" class="footer-link">Order Supplies</a></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" width="100%" style="font-family: Helvetica, Arial, sans-serif;">
+       <tr>
+          <td bgcolor="#ffffff" align="center">
+            <!-- UNSUBSCRIBE COPY -->
+            <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+              <tr>
+                <td align="center" valign="middle" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
+                  <span class="appleFooter" style="color:#666666;">You received this because you are a very special client of ours.<br> To ensure delivery to your inbox, add @corodata.com to your address book.</span><br><a class="hubspot-mergetag" style="color:#666666;" data-unsubscribe="true" href="{{ unsubscribe_link_all }}">Unsubscribe</a><span class="original-only" style="font-family: Arial, sans-serif; font-size: 12px; color: #444444;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a style="color:#666666;" class="hubspot-mergetag" data-viewaswebpage="true" href="{{ view_as_page_url }}">View as a web page</a><br><span style=" display:block; margin-top:20px; padding-bottom:20px;">© 2015 {{ site_settings.company_name }}. · {{ site_settings.company_street_address_1 }}. {{ site_settings.company_street_address_2 }}· {{ site_settings.company_city }}, {{ site_settings.company_state }} {{ site_settings.company_zip }}</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+    </table>
+
+  </body>
+</html>
